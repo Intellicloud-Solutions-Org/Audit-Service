@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SecurityService {
 
-    @Value("${security.secretKey}")
-    private String secretKey;
+    private final String secretKey = "B374A26A71490437AA024E4FADD5B497FDFF1A8EA6FF12F6FB65AF2720B59CCF";
 
     // Validate JWT token
     public boolean validateToken(String token) {
@@ -23,6 +22,7 @@ public class SecurityService {
             return false;
         }
     }
+
     // Extract user role from token
     public String getRoleFromToken(String token) {
         Claims claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();

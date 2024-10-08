@@ -10,11 +10,9 @@ import javax.crypto.spec.SecretKeySpec;
 @Service
 public class EncryptionService {
 
-    @Value("${encryption.algorithm}")
-    private String algorithm;  // e.g., "AES"
-
-    @Value("${encryption.secretKey}")
-    private String secretKey;  // Must be 16/24/32 bytes // Must be 16/24/32 bytes
+    private static final String algorithm = "AES";
+    private static final String secretKey= "mySecretKey12345========";
+    // Must be 16/24/32 bytes
 
 
 public String encrypt(String data) throws Exception {

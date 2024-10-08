@@ -2,6 +2,7 @@ package com.AuditService.request;
 
 public class AuditRequest {
 
+
     private String entityId;
     private String action;
     private String userId;
